@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lights Out Privacy Policy</title>
+<meta name="theme-color" content="#0b0b0d">
+<style>
+  @font-face {
+    font-family: "Garage";
+    src: url("../LightsOut-GarageDisplay.ttf") format("truetype");
+    font-display: swap;
+  }
+  :root { --bg: #0b0b0d; --fg: #f2f2f2; --dim: #8a8a90; --red: #ff1a0f; }
+  * { box-sizing: border-box; margin: 0; }
+  html { background: var(--bg); color: var(--fg); }
+  body {
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    max-width: 36em;
+    margin: 0 auto;
+    padding: 10vh 16px 48px;
+  }
+  a { color: inherit; text-decoration-color: var(--red); text-underline-offset: 3px; }
+  .home { color: var(--dim); font-size: 15px; text-decoration: none; }
+  h1 {
+    font-family: "Garage", -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: clamp(44px, 11vw, 72px);
+    line-height: .95;
+    text-transform: uppercase;
+    margin: 24px 0 8px;
+  }
+  h2 { font-size: 17px; margin: 40px 0 8px; }
+  p, ul { color: #c9c9ce; margin-top: 12px; }
+  ul { padding-left: 1.2em; }
+  li + li { margin-top: 8px; }
+  strong { color: var(--fg); }
+  .date { color: var(--dim); font-size: 15px; margin: 0 0 32px; }
+</style>
+</head>
+<body>
+  <a class="home" href="../">← Lights Out</a>
+  <h1>Privacy</h1>
+  <p class="date">Last updated 17 November 2026</p>
+
+  <p>Lights Out doesn't collect any data about you. It has no accounts, analytics, advertising or tracking, and nothing you do in it is sent to the developer.</p>
+
+  <h2>What stays on your devices</h2>
+  <ul>
+    <li><strong>Alarms</strong> are set on your iPhone or iPad by iOS, and a copy of when they ring is sent to your Apple Watch so its widgets can show them.</li>
+    <li><strong>Favourites, theme and Hide Results</strong> are kept in your own iCloud account (iCloud key-value storage), so your iPhone, iPad and Apple Watch match. Apple holds this under <a href="https://www.apple.com/legal/privacy/">its privacy policy</a>; the developer can't see it.</li>
+    <li><strong>An alarm sound</strong> you choose from Files is copied into the app and cut to a short clip. It never leaves your device.</li>
+    <li><strong>Schedules, results, forecasts and track maps</strong> are saved on your device so the app and its widgets work offline.</li>
+  </ul>
+
+  <h2>Services the app talks to</h2>
+  <p>To fetch the F1 calendar, results, weather and circuit maps, the app makes requests to:</p>
+  <ul>
+    <li><a href="https://openf1.org">OpenF1</a> and <a href="https://jolpi.ca">Jolpica</a> for schedules, results and standings</li>
+    <li><a href="https://multiviewer.app">MultiViewer</a> for track maps</li>
+    <li><a href="https://weatherkit.apple.com/legal-attribution.html">Apple WeatherKit</a> for forecasts at each circuit</li>
+  </ul>
+  <p>These requests ask for public race data and the weather at the circuits. They don't include your location or anything about you, though like any web request they reveal your IP address to that service.</p>
+
+  <h2>Children</h2>
+  <p>Lights Out is not directed at children and collects no data from anyone.</p>
+
+  <h2>Changes and contact</h2>
+  <p>If this policy changes, the new version will be posted here with a new date. Questions: <a href="mailto:f1@mxh.au">f1@mxh.au</a></p>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lights Out</title>
+<meta name="description" content="Real alarms for Formula 1 sessions, so you wake up for them.">
+<meta name="theme-color" content="#0b0b0d">
+<style>
+  @font-face {
+    font-family: "Garage";
+    src: url("LightsOut-GarageDisplay.ttf") format("truetype");
+    font-display: swap;
+  }
+  :root {
+    --bg: #0b0b0d;
+    --fg: #f2f2f2;
+    --dim: #8a8a90;
+    --red: #ff1a0f;
+    --off: #2a0605;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { background: var(--bg); color: var(--fg); }
+  body {
+    font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12vh 16px 32px;
+    text-align: center;
+  }
+  .lights { display: flex; gap: 14px; margin-bottom: 40px; }
+  .lights span {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--off);
+    animation: 6s steps(1, end) infinite;
+  }
+  /* One light at a time, a hold, then all out together. */
+  .lights span:nth-child(1) { animation-name: l1; }
+  .lights span:nth-child(2) { animation-name: l2; }
+  .lights span:nth-child(3) { animation-name: l3; }
+  .lights span:nth-child(4) { animation-name: l4; }
+  .lights span:nth-child(5) { animation-name: l5; }
+  @keyframes l1 { 0%, 10% { background: var(--off); box-shadow: none; } 15%, 88% { background: var(--red); box-shadow: 0 0 18px var(--red); } 90%, 100% { background: var(--off); box-shadow: none; } }
+  @keyframes l2 { 0%, 25% { background: var(--off); box-shadow: none; } 30%, 88% { background: var(--red); box-shadow: 0 0 18px var(--red); } 90%, 100% { background: var(--off); box-shadow: none; } }
+  @keyframes l3 { 0%, 40% { background: var(--off); box-shadow: none; } 45%, 88% { background: var(--red); box-shadow: 0 0 18px var(--red); } 90%, 100% { background: var(--off); box-shadow: none; } }
+  @keyframes l4 { 0%, 55% { background: var(--off); box-shadow: none; } 60%, 88% { background: var(--red); box-shadow: 0 0 18px var(--red); } 90%, 100% { background: var(--off); box-shadow: none; } }
+  @keyframes l5 { 0%, 70% { background: var(--off); box-shadow: none; } 75%, 88% { background: var(--red); box-shadow: 0 0 18px var(--red); } 90%, 100% { background: var(--off); box-shadow: none; } }
+  h1 {
+    font-family: "Garage", -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: clamp(64px, 16vw, 136px);
+    line-height: .9;
+    letter-spacing: -.01em;
+    /*text-transform: uppercase;*/
+  }
+  p.lede { color: var(--dim); margin: 20px 0 56px; max-width: 26em; }
+  img {
+    width: min(180px, 44vw);
+    height: auto;
+    filter: drop-shadow(0 24px 48px #ff1a0f40);
+  }
+  footer { margin-top: auto; padding-top: 64px; color: var(--dim); font-size: 13px; }
+  footer a { color: inherit; }
+  @media (prefers-reduced-motion: reduce) {
+    .lights span { animation: none; background: var(--red); }
+  }
+</style>
+</head>
+<body>
+  <div class="lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <h1>Lights Out</h1>
+  <p class="lede">Alarms for Formula&nbsp;1 sessions.<br/> iPhone, iPad and Apple&nbsp;Watch.</p>
+  <img src="icon.png" width="512" height="512" alt="The Lights Out app icon: a red start light">
+  <footer><a href="privacy/">Privacy</a> · Not affiliated with Formula 1.</footer>
+</body>
+</html>
