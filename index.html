@@ -31,6 +31,7 @@
     align-items: center;
     padding: 12vh 16px 32px;
     text-align: center;
+    overflow-x: clip; /* the icon glow is wider than small phones */
   }
   .lights { display: flex; gap: 14px; margin-bottom: 40px; }
   .lights span {
@@ -58,11 +59,31 @@
     /*text-transform: uppercase;*/
   }
   p.lede { color: var(--dim); margin: 20px 0 56px; max-width: 26em; }
+  /* The glow is a pre-rendered image (icon-glow.png) rather than
+     filter: drop-shadow(), which Safari sometimes clips to a square.
+     It matches drop-shadow(0 24px 48px #ff1a0f40) of the icon at 180px,
+     with 120px of padding on each side; the offsets below are in icon
+     widths (120/180, 420/180, and 24/180 for the downward shift). */
+  .icon {
+    display: block;
+    position: relative;
+    isolation: isolate;
+  }
+  .icon::before {
+    content: "";
+    position: absolute;
+    left: -66.667%;
+    top: calc(-66.667% + 13.333%);
+    width: 233.333%;
+    aspect-ratio: 1;
+    background: url("icon-glow.png") center / contain no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
   .icon img {
     display: block;
     width: min(180px, 44vw);
     height: auto;
-    filter: drop-shadow(0 24px 48px #ff1a0f40);
   }
   .badge { margin-top: 40px; }
   .badge img { display: block; height: 54px; width: auto; }
