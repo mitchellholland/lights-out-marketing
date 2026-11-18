@@ -56,11 +56,14 @@
     /*text-transform: uppercase;*/
   }
   p.lede { color: var(--dim); margin: 20px 0 56px; max-width: 26em; }
-  img {
+  .icon img {
+    display: block;
     width: min(180px, 44vw);
     height: auto;
     filter: drop-shadow(0 24px 48px #ff1a0f40);
   }
+  .badge { margin-top: 40px; }
+  .badge img { display: block; height: 54px; width: auto; }
   footer { margin-top: auto; padding-top: 64px; color: var(--dim); font-size: 13px; }
   footer a { color: inherit; }
   @media (prefers-reduced-motion: reduce) {
@@ -72,7 +75,8 @@
   <div class="lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
   <h1>Lights Out</h1>
   <p class="lede">Alarms for Formula&nbsp;1 sessions.<br/> iPhone, iPad and Apple&nbsp;Watch.</p>
-  <img src="icon.png" width="512" height="512" alt="The Lights Out app icon: a red start light">
+  <a class="icon" href="https://apps.apple.com/au/app/lights-out-alarms-and-stats/id6822175135"><img src="icon.png" width="512" height="512" alt="Lights Out on the App Store"></a>
+  <a class="badge" href="https://apps.apple.com/au/app/lights-out-alarms-and-stats/id6822175135"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" width="120" height="40" alt="Download on the App Store"></a>
   <footer><a href="privacy/">Privacy</a> · Not affiliated with Formula 1.</footer>
 </body>
 </html>
